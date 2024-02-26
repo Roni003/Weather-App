@@ -1,0 +1,18 @@
+.blurred-container {
+  background-image: url("../assets/BlurredBG.png");
+  padding: 0;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+.line-container {
+  display: flex;
+  gap: 2em;
+}
