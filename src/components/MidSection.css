@@ -1,5 +1,47 @@
 .mid {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  padding-bottom: 6rem;
+}
+
+.mid h1 {
+  color: var(--Label-Dark-Primary, #fff);
+  text-align: center;
+  font-family: Inter;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 41px; /* 91.111% */
+  letter-spacing: 0.374px;
+  padding: 0;
+  margin: 0.75rem;
+}
+
+.mid h2 {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41px; /* 74.545% */
+  letter-spacing: 0.374px;
+  padding: 0;
+  margin: 0.75rem;
+}
+
+.mid h3 {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41px; /* 164% */
+  letter-spacing: 0.374px;
+  padding: 0;
+  margin: 0.25rem;
 }
