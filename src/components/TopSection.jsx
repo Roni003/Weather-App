@@ -1,6 +1,9 @@
+import "./TopSection.css"
+
 const TopSection = () => {
-  return (<div>
-    TOP
+  return (<div className="top">
+    <div>...</div>
+    <div>+</div>
   </div>);
 }
 

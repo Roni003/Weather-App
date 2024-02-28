@@ -1,6 +1,6 @@
 .app {
   display: grid;
-  grid-template-rows: 6fr 4fr;
+  grid-template-rows: 1fr 5fr 4fr;
 
   height: 100dvh; /* Make sure the app covers up the whole screen */
 }
