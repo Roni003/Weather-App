@@ -19,3 +19,7 @@
   display: flex;
   gap: 2.25em;
 }
+
+.hourly-forecast {
+  text-align: center;
+}
