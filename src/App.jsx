@@ -1,10 +1,29 @@
-import Home from './pages/Home';
-import './App.css'
+import Home from './routes/Home';
+import Locations from "./routes/Locations.jsx";
+import ErrorPage from './routes/ErrorPage.jsx';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import './App.css';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/locations",
+    element: <Locations />,
+    errorElement: <ErrorPage />
+  }
+]);
 
 function App() {
   return (
     <div className='app'>
-      <Home />
+      <RouterProvider router={router} />
     </div>
   )
 }
