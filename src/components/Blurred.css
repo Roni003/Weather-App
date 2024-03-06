@@ -1,47 +1,33 @@
 .blurred-container {
   background-image: url("../assets/BlurredBG.png");
   padding: 0;
+  height: 340px;
   display: grid;
   grid-template-rows: 10fr 12fr;
   align-items: center;
 }
 
+/* Hourly Forecast */
+.hourly-forecast {
+  text-align: center;
+  display: flex;
+  margin: 0;
+  overflow-x: scroll;
+}
+/* ----- */
+
+/* tfl buttons */
 .lines {
   display: flex;
   flex-direction: column;
   gap: 1.75em;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .line-container {
   display: flex;
   gap: 2.25em;
 }
-
-.hourly-forecast {
-  text-align: center;
-  width: 50%;
-  margin: auto;
-}
-
-.forecast-container {
-  display: flex;
-  width: 100%;
-  overflow-x: scroll;
-  margin: auto;
-}
-
-@media only screen and (max-width: 400px) and (max-height: 900) {
-  .forecast-container {
-    max-width: 80%;
-  }
-}
-
-.forecast-item {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 1px;
-}
+/* ----- */
