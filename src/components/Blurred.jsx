@@ -1,12 +1,18 @@
 import TFLButton from "./TFLButton";
-import "./Blurred.css"
+import ForecastItem from "./ForecastItem";
+import "./Blurred.css";
 
 const Blurred = () => {
   return (
     <div className="blurred-container">
 
       <div className="hourly-forecast">
-        Hourly forecast
+        <ForecastItem></ForecastItem>
+        <ForecastItem></ForecastItem>
+        <ForecastItem></ForecastItem>
+        <ForecastItem></ForecastItem>
+        <ForecastItem></ForecastItem>
+        <ForecastItem></ForecastItem>
       </div>
 
       <div className="lines">
@@ -20,7 +26,8 @@ const Blurred = () => {
         </div>
       </div>
 
-    </div>);
-}
+    </div>
+  );
+};
 
 export default Blurred;

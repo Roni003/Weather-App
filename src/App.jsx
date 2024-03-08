@@ -1,14 +1,29 @@
-import Blurred from './components/Blurred';
-import TopSection from './components/TopSection';
-import MidSection from './components/MidSection';
-import './App.css'
+import Home from './routes/Home';
+import Locations from "./routes/Locations.jsx";
+import ErrorPage from './routes/ErrorPage.jsx';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import './App.css';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/locations",
+    element: <Locations />,
+    errorElement: <ErrorPage />
+  }
+]);
 
 function App() {
   return (
     <div className='app'>
-      <TopSection />
-      <MidSection />
-      <Blurred />
+      <RouterProvider router={router} />
     </div>
   )
 }
