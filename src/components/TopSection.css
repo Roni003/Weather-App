@@ -12,3 +12,17 @@
   text-decoration: none;
   color: white;
 }
+
+#check {
+  display: none;
+}
+
+.menu {
+  margin-left: 0.3em;
+  position: relative;
+  z-index: 4;
+}
+
+.menu label {
+  cursor: pointer;
+}
