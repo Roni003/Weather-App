@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./TopSection.css";
 import Sidebar from "./Sidebar";
+import { CSSTransition } from "react-transition-group";
 
 const TopSection = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -22,7 +23,14 @@ const TopSection = () => {
       <div>
         <Link to={"/locations"}>+</Link>
       </div>
-      {isSidebarOpen && <Sidebar />}
+      <CSSTransition
+        in={isSidebarOpen}
+        timeout={500}
+        classNames="sidebar"
+        unmountOnExit
+      >
+        <Sidebar />
+      </CSSTransition>
     </div>
   );
 };
