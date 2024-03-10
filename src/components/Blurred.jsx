@@ -17,11 +17,11 @@ const Blurred = () => {
 
       <div className="lines">
         <div className="line-container">
-          <TFLButton line={"central"} />
-          <TFLButton line={"circle"} />
+          <TFLButton line={"metropolitan"} />
+          <TFLButton line={"elizabeth"} />
         </div>
         <div className="line-container">
-          <TFLButton line={"district"} />
+          <TFLButton line={"piccadilly"} />
           <TFLButton line={"jubilee"} />
         </div>
       </div>
