@@ -12,7 +12,7 @@ const TopSection = () => {
   };
 
   return (
-    <div className="top">
+    <div className={`top ${isSidebarOpen ? "top-sidebar-open" : ""}`}>
       <div className="menu">
         <input type="checkbox" name="checkbox" id="check" />
         <label htmlFor="check" onClick={handleLabelClick}>
