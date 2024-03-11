@@ -11,11 +11,11 @@ map.set("district", "rgb(0, 121, 52)");
 map.set("elizabeth", "rgb(119, 61, 189)");
 map.set("jubilee", "rgb(123, 134, 140)");
 map.set("metropolitan", "rgb(135, 15, 84)");
-//map.set("h&c", "rgb(236, 155, 173)"); dont know TFL line name
+map.set("hammersmith-city", "rgb(236, 155, 173)");
 map.set("northern", "rgb(0, 0, 0)");
 map.set("piccadilly", "rgb(0, 15, 159)");
 map.set("victoria", "rgb(0, 160, 223)");
-//map.set("waterloo&city", "rgb(107, 205, 178)"); dont know TFL line name
+map.set("waterloo-city", "rgb(107, 205, 178)");
 
 const TFLButton = ({ line }) => {
   const [lineStatus, setLineStatus] = useState("Fetching line status");
