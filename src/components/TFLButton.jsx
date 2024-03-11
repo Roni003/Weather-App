@@ -18,7 +18,7 @@ map.set("victoria", "rgb(0, 160, 223)");
 //map.set("waterloo&city", "rgb(107, 205, 178)"); dont know TFL line name
 
 const TFLButton = ({ line }) => {
-  const [lineStatus, setLineStatus] = useState(null);
+  const [lineStatus, setLineStatus] = useState("Fetching line status");
   useEffect(() => {
     getLineStatus(line).then(out => setLineStatus(out));
   }, [line])
