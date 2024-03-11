@@ -3,7 +3,8 @@ import ForecastItem from "./ForecastItem";
 import "./Blurred.css";
 import { useEffect, useState } from "react";
 
-function updateLocalStorageLines(linesArray) {
+// Takes input as array, updates localstorage
+function setLocalStorageLines(linesArray) {
   let str = "";
   for (let i = 0; i < linesArray.length; i++) {
     str += linesArray[i] + ","
@@ -12,16 +13,22 @@ function updateLocalStorageLines(linesArray) {
   localStorage.setItem("lines", str);
 }
 
+// Takes lines from storage and returns as array
+function getLocalStorageLines() {
+  return localStorage.getItem("lines").split(",");
+}
+
 const Blurred = () => {
   // Default 4 lines
   const [linesArray, setLinesArray] = useState(["central", "district", "circle", "elizabeth"]);
 
   useEffect(() => {
     if (localStorage.getItem("lines") == null) {
-      updateLocalStorageLines(linesArray);
+      setLocalStorageLines(linesArray);
     }
 
-    setLinesArray(localStorage.getItem("lines").split(","));
+    // If lines in localstorage, update linesArray with it.
+    setLinesArray(getLocalStorageLines());
   }, [])
 
   return (
