@@ -2,21 +2,8 @@ import TFLButton from "./TFLButton";
 import ForecastItem from "./ForecastItem";
 import "./Blurred.css";
 import { useEffect, useState } from "react";
+import { getLocalStorageLines, setLocalStorageLines } from "../functions/tfl.js";
 
-// Takes input as array, updates localstorage
-function setLocalStorageLines(linesArray) {
-  let str = "";
-  for (let i = 0; i < linesArray.length; i++) {
-    str += linesArray[i] + ","
-  }
-  str = str.substring(0, str.length - 1); // remove last ","
-  localStorage.setItem("lines", str);
-}
-
-// Takes lines from storage and returns as array
-function getLocalStorageLines() {
-  return localStorage.getItem("lines").split(",");
-}
 
 const Blurred = () => {
   // Default 4 lines
