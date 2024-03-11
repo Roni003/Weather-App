@@ -1,0 +1,50 @@
+.box-container {
+    background-image: url("../assets/BlurredBG.png");
+    padding: 0;
+    height: 340px;
+    display: grid;
+    grid-template-rows: 10fr 12fr;
+    align-items: center;
+}
+
+.box {
+    padding: 20px;
+    margin: 10px auto; 
+    text-align: center;
+    border-radius: 10px;
+    background-image: url("../assets/BlurredBG.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    margin-top: 100px;
+    margin-bottom: 20px; 
+    width: 330px;
+    font-family: 'Arial';
+    font-size: 25px;
+    height: 10 px;
+    margin-right: 4800;
+}
+
+
+.box h2 {
+    font-size: 1.5em; 
+    margin-bottom: 10px; 
+}
+
+
+.subdivision {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin: 5px 0; 
+}
+
+.subdivision span {
+    font-size: 1em; 
+}
+
+
+.icon {
+    width: 30px; 
+    height: 30px; 
+}

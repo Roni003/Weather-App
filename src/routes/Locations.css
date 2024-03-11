@@ -1,14 +1,19 @@
-.top {
+.Locations {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   padding-right: 1em;
   padding-left: 0.5em;
   font-size: 2.25rem;
+
+  flex-direction: column;
+  justify-content: flex-start; 
 }
 
-.top img {
+.Locations img {
   padding-top: 0.4em;
   width: 80%;
+}
+
+.Locations div2{
+  align-self: center;
 }
