@@ -11,11 +11,11 @@ const Blurred = () => {
 
   useEffect(() => {
     if (localStorage.getItem("lines") == null) {
-      setLocalStorageLines(linesArray);
+      setLocalStorageLines(["central", "district", "circle", "elizabeth"]);
+    } else {
+      // If lines in localstorage, update linesArray with it.
+      setLinesArray(getLocalStorageLines());
     }
-
-    // If lines in localstorage, update linesArray with it.
-    setLinesArray(getLocalStorageLines());
   }, [])
 
   return (

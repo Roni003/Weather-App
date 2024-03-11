@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./Locations.css";
 import LocationsTopSection from "../components/LocationsTopSection";
 import BoxComponent from "../components/BoxComponent1";

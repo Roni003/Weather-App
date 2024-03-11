@@ -13,8 +13,6 @@ function getOptions(lineList, keyCounter,) {
   })
 }
 
-
-
 const Sidebar = () => {
   const [lines, setLines] = useState(getLocalStorageLines());
   const lineList = [
@@ -36,17 +34,14 @@ const Sidebar = () => {
   function getSelects(lineList, lines, keyCounter) {
     let selects = [];
     for (let i = 0; i < 4; i++) {
-      let element =
-        <select key={i} name={"select-" + i} defaultValue={lines[i]} onChange={(e) => {
-          lines[i] = e.target.value;
-          setLines(lines);
-          setLocalStorageLines(lines);
-
-        }}>
-          {getOptions(lineList, keyCounter, { i })}
-        </select>;
-
-      selects.push(element)
+      selects.push(<select key={i} name={"select-" + i} defaultValue={lines[i]} onChange={(e) => {
+        lines[i] = e.target.value;
+        setLines(lines);
+        setLocalStorageLines(lines);
+        window.location.reload();
+      }}>
+        {getOptions(lineList, keyCounter, { i })}
+      </select>)
     }
     return selects;
   }
