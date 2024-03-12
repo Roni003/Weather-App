@@ -55,8 +55,27 @@
   padding: 0;
 }
 
-/* .sidebar-enter-done {
+.sidebar-enter-done {
   padding: 0;
 }
-commnted out, was messing with padding - roni 
-*/
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.inputs select {
+  margin: auto;
+  width: 80%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+h6 {
+  text-align: center;
+}
