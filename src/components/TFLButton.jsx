@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import "./TFLButton.css";
 import { useEffect, useState } from "react";
+import { capitalizeFirstLetter } from '../functions/helpers';
 
 const TFL_API_ID = "8a625acf19ac4447a1990cfbac214163";
 const TFL_API_KEY = "fe4079da085740529d42ffe9e57db3c9";
@@ -25,7 +26,7 @@ const TFLButton = ({ line }) => {
   }, [line])
 
   // Capitalize first letter of word, looks better
-  line = line.charAt(0).toUpperCase() + line.substring(1).toLowerCase();
+  line = capitalizeFirstLetter(line);
 
   return (
     <div className="line-button" style={{ backgroundColor: map.get(line.toLowerCase()) }}>
