@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="home">
       <TopSection />
-      <MidSection />
+      <MidSection location={"Istanbul"} />
       <Blurred />
     </div>
   );
