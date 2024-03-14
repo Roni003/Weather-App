@@ -4,11 +4,13 @@ import BoxComponent from "../components/BoxComponent1";
 import BoxComponent2 from "../components/BoxComponent2";
 import BoxComponent3 from "../components/BoxComponent3";
 import BoxComponent4 from "../components/BoxComponent4";
+import SearchBar from "../components/SearchBar";
 
 const Locations = () => {
   return (
     <div className="Locations">
       <div>
+        <SearchBar />
         <LocationsTopSection></LocationsTopSection>
       </div>
       <div>
