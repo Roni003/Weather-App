@@ -2,12 +2,27 @@ import TFLButton from "./TFLButton";
 import ForecastItem from "./ForecastItem";
 import "./Blurred.css";
 import { useEffect, useState } from "react";
-import { getLocalStorageLines, setLocalStorageLines } from "../functions/tfl.js";
+import {
+  getLocalStorageLines,
+  setLocalStorageLines,
+} from "../functions/tfl.js";
 
+const Blurred = ({ data }) => {
+  const currentTime = new Date();
+  const next24Hours = new Date(currentTime.getTime() + 24 * 60 * 60 * 1000);
+  //conatins only the next 24 hours
+  let filteredData = [];
+  filteredData = data.data.filter(
+    (item) => new Date(item.dt_txt) <= next24Hours
+  );
 
-const Blurred = () => {
   // Default 4 lines
-  const [linesArray, setLinesArray] = useState(["central", "district", "circle", "elizabeth"]);
+  const [linesArray, setLinesArray] = useState([
+    "central",
+    "district",
+    "circle",
+    "elizabeth",
+  ]);
 
   useEffect(() => {
     if (localStorage.getItem("lines") == null) {
@@ -16,18 +31,14 @@ const Blurred = () => {
       // If lines in localstorage, update linesArray with it.
       setLinesArray(getLocalStorageLines());
     }
-  }, [])
+  }, []);
 
   return (
     <div className="blurred-container">
-
       <div className="hourly-forecast">
-        <ForecastItem></ForecastItem>
-        <ForecastItem></ForecastItem>
-        <ForecastItem></ForecastItem>
-        <ForecastItem></ForecastItem>
-        <ForecastItem></ForecastItem>
-        <ForecastItem></ForecastItem>
+        {filteredData.map((forecast, index) => (
+          <ForecastItem key={index} data={forecast} />
+        ))}
       </div>
 
       <div className="lines">
@@ -40,7 +51,6 @@ const Blurred = () => {
           <TFLButton line={linesArray[3]} />
         </div>
       </div>
-
     </div>
   );
 };
