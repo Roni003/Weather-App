@@ -2,7 +2,8 @@ import "./Sidebar.css";
 import {
   getLocalStorageLines,
   setLocalStorageLines,
-  lineList
+  lineList,
+  colorMap
 } from "../functions/tfl.js";
 import { useState } from "react";
 
@@ -29,7 +30,9 @@ const Sidebar = () => {
         <select
           key={i}
           name={"select-" + i}
+          className="line-button"
           defaultValue={lines[i]}
+          style={{ backgroundColor: colorMap.get(lines[i].toLowerCase()) }}
           onChange={(e) => {
             lines[i] = e.target.value;
             setLines(lines);

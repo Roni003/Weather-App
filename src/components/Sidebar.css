@@ -15,6 +15,7 @@
   text-decoration: none;
   width: 100%;
   padding: 0;
+  gap: 1.5rem;
 }
 
 .sidebar ul li {
@@ -67,13 +68,22 @@
 
 .inputs select {
   margin: auto;
-  width: 80%;
-  padding: 20px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  text-align: center;
-  text-transform: capitalize;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  opacity: 0.75;
+  mix-blend-mode: plus-lighter;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
 }
 
 h6 {

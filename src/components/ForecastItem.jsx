@@ -8,7 +8,7 @@ const ForecastItem = ({ data }) => {
 
   return (
     <div className="forecast-item">
-      <p>{time.substring(0, time.length)}</p>
+      <p>{time.substring(0, 2).replace(":", "") + " " + time.substring(time.length - 2, time.length)}</p>
       <img
         src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
       />
