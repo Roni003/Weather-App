@@ -26,7 +26,7 @@ const Home = () => {
         setData(out);
       });
       getHourlyWeatherInfo(location).then((out) => {
-        setData(out);
+        setHourlyData(out);
       });
     }
   }, []);
