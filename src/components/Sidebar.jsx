@@ -2,14 +2,15 @@ import "./Sidebar.css";
 import {
   getLocalStorageLines,
   setLocalStorageLines,
+  lineList
 } from "../functions/tfl.js";
 import { useState } from "react";
 
-function getOptions(lineList, keyCounter) {
-  return lineList.map((line) => {
-    keyCounter++;
+// Returns an array of <option> elements, one for each element of the lineList array
+function getOptions(lineList) {
+  return lineList.map((line, index) => {
     return (
-      <option key={keyCounter} value={line}>
+      <option key={index} value={line}>
         {line}
       </option>
     );
@@ -17,24 +18,11 @@ function getOptions(lineList, keyCounter) {
 }
 
 const Sidebar = () => {
+  // Get list of 4 selected TFL lines from localstorage
   const [lines, setLines] = useState(getLocalStorageLines());
-  const lineList = [
-    "bakerloo",
-    "central",
-    "circle",
-    "district",
-    "elizabeth",
-    "jubilee",
-    "metropolitan",
-    "hammersmith-city",
-    "northern",
-    "piccadilly",
-    "victoria",
-    "waterloo-city",
-  ];
-  let keyCounter = 10;
 
-  function getSelects(lineList, lines, keyCounter) {
+  // Get 4 <select> elements, each with one of the selected TFL lines as the default value
+  function getSelects(lineList, lines) {
     let selects = [];
     for (let i = 0; i < 4; i++) {
       selects.push(
@@ -49,7 +37,7 @@ const Sidebar = () => {
             window.location.reload();
           }}
         >
-          {getOptions(lineList, keyCounter, { i })}
+          {getOptions(lineList, { i })}
         </select>
       );
     }
@@ -59,7 +47,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <h6>Selected TFL Lines</h6>
-      <ul className="inputs">{getSelects(lineList, lines, keyCounter)}</ul>
+      <ul className="inputs">{getSelects(lineList, lines)}</ul>
     </div>
   );
 };
