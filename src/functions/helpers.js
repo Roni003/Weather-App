@@ -1,3 +1,4 @@
+// Capitalizes the first letter of the string and returns it
 export function capitalizeFirstLetter(str) {
-  return str = str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+  return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
 }
