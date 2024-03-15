@@ -17,12 +17,7 @@ const Blurred = ({ data }) => {
   );
 
   // Default 4 lines
-  const [linesArray, setLinesArray] = useState([
-    "central",
-    "district",
-    "circle",
-    "elizabeth",
-  ]);
+  const [linesArray, setLinesArray] = useState();
 
   useEffect(() => {
     if (localStorage.getItem("lines") == null) {
@@ -41,16 +36,18 @@ const Blurred = ({ data }) => {
         ))}
       </div>
 
-      <div className="lines">
-        <div className="line-container">
-          <TFLButton line={linesArray[0]} />
-          <TFLButton line={linesArray[1]} />
+      {linesArray ?
+        <div className="lines">
+          <div className="line-container">
+            <TFLButton line={linesArray[0]} />
+            <TFLButton line={linesArray[1]} />
+          </div>
+          <div className="line-container">
+            <TFLButton line={linesArray[2]} />
+            <TFLButton line={linesArray[3]} />
+          </div>
         </div>
-        <div className="line-container">
-          <TFLButton line={linesArray[2]} />
-          <TFLButton line={linesArray[3]} />
-        </div>
-      </div>
+        : ""}
     </div>
   );
 };
