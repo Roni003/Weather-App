@@ -16,35 +16,45 @@
     background-size: cover;
     background-position: center;
     color: #fff;
-    margin-top: 100px;
     margin-bottom: 20px; 
     width: 330px;
     font-family: 'Arial';
-    font-size: 25px;
-    height: 10 px;
+    font-size: 2px;
+    height: 100px;
     margin-right: 4800;
 }
 
 
 .box h2 {
-    font-size: 1.5em; 
+    top: 10px; 
+    left: 50%; 
+    transform: translateX(-29%); 
+    font-size: 5px; 
     margin-bottom: 10px; 
+    margin-left: 50px;
 }
 
 
 .subdivision {
     display: flex; 
     align-items: center; 
-    justify-content: space-between; 
     margin: 5px 0; 
+    justify-content: space-between;
 }
 
 .subdivision span {
-    font-size: 1em; 
+    font-size: 2px; 
 }
 
 
-.icon {
-    width: 30px; 
-    height: 30px; 
+.box img {
+    width: 25%; 
+}
+
+div#top {
+    margin-top: -20px;
+}
+
+div#bottom{
+    margin-top: +15px;
 }

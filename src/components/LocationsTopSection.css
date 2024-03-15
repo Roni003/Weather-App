@@ -1,11 +1,11 @@
 .top {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     padding-right: 1em;
     padding-left: 0.5em;
     font-size: 2.25rem;
+    margin-left: 1px;
 }
 
 .top img {

@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
 import "./BoxComponent1.css";
+import { capitalizeFirstLetter } from "../functions/helpers.js";
 
-const BoxComponent = ({ cityName, icon, temperature, details }) => {
+const BoxComponent = ({ data}) => {
     return (
     <div className="box">
-        <h2>{cityName}</h2>
-        <div className="subdivision">
-            <img src={icon} alt="weather icon" className="icon" />
-        </div>
-        <div className="subdivision">
-            <span>Temperature: {temperature}&deg;C</span>
-        </div>
-        <div className="subdivision">
-            <span>Details: {details}</span>
+         <div id = "top" className="subdivision">
+         <h2 style={{ fontSize: '20px' }}>{capitalizeFirstLetter(data.location)}</h2>
+        <img 
+            src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+        />
+         </div>
+        <div id = "bottom" className="subdivision">
+            <span style={{ fontSize: '14px' }}>Temperature: {data.temperature.temp}℃</span>
+            <span style={{ fontSize: '14px' }}>Details: {capitalizeFirstLetter(data.weather[0].description)}</span>
         </div>
     </div>
     );
