@@ -10,7 +10,7 @@ import {
 const Blurred = ({ data }) => {
   const currentTime = new Date();
   const next24Hours = new Date(currentTime.getTime() + 24 * 60 * 60 * 1000);
-  //conatins only the next 24 hours
+  //contains only the next 24 hours
   let filteredData = [];
   filteredData = data.data.filter(
     (item) => new Date(item.dt_txt) <= next24Hours
@@ -36,7 +36,7 @@ const Blurred = ({ data }) => {
         ))}
       </div>
 
-      {linesArray ?
+      {linesArray ? (
         <div className="lines">
           <div className="line-container">
             <TFLButton line={linesArray[0]} />
@@ -47,7 +47,9 @@ const Blurred = ({ data }) => {
             <TFLButton line={linesArray[3]} />
           </div>
         </div>
-        : ""}
+      ) : (
+        ""
+      )}
     </div>
   );
 };

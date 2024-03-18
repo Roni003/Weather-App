@@ -40,8 +40,6 @@ const Locations = () => {
         {data ? <BoxComponent data={data} /> : ""}
         {data ? <BoxComponent data={data} /> : ""}
       </div>
-      
-     
     </div>
   );
 };
