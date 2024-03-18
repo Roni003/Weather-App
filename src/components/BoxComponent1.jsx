@@ -2,10 +2,14 @@ import PropTypes from 'prop-types';
 import "./BoxComponent1.css";
 import { capitalizeFirstLetter } from "../functions/helpers.js";
 
-const BoxComponent = ({ data}) => {
+const BoxComponent = ({ data, onRemove}) => {
+    const handleRemove = () => {
+        onRemove();
+    };
     return (
     <div className="box">
          <div id = "top" className="subdivision">
+         <div><button onClick={handleRemove}>-</button></div>
          <h2 style={{ fontSize: '20px' }}>{capitalizeFirstLetter(data.location)}</h2>
         <img 
             src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
@@ -24,6 +28,7 @@ BoxComponent.propTypes = {
     icon: PropTypes.string.isRequired,
     temperature: PropTypes.number.isRequired,
     details: PropTypes.string.isRequired,
+    onRemove: PropTypes.func.isRequired,
 };
 
 export default BoxComponent;
