@@ -11,7 +11,7 @@
 1. Clone the repository:
 
 ```
-git clone https://github.com/Roni003/GUI-Weather-App
+git clone https://github.com/Roni003/GUI-Weather-App.git
 ```
 
 2. Navigate to the project directory:
