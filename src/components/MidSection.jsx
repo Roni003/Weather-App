@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import "./MidSection.css";
 import { capitalizeFirstLetter } from "../functions/helpers.js";
+import WeatherIcon from "./weatherIcon.jsx";
 
 const MidSection = ({ data }) => {
   return (
     <div className="mid">
       <h1> {capitalizeFirstLetter(data.location)} </h1>
       <div>
-        <img
-          src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-        />
+        <WeatherIcon code={data.weather[0].icon}></WeatherIcon>
       </div>
       <h2> {data.temperature.temp}℃</h2>
       <h3> {capitalizeFirstLetter(data.weather[0].description)} </h3>

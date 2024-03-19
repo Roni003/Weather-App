@@ -1,5 +1,6 @@
 import "./ForecastItem.css";
 import { capitalizeFirstLetter } from "../functions/helpers.js";
+import WeatherIcon from "./weatherIcon.jsx";
 
 const ForecastItem = ({ data }) => {
   const time = new Date(data.dt_txt).toLocaleTimeString(); // Format time as desired
@@ -9,9 +10,7 @@ const ForecastItem = ({ data }) => {
   return (
     <div className="forecast-item">
       <p>{time.substring(0, 2).replace(":", "") + " " + time.substring(time.length - 2, time.length)}</p>
-      <img
-        src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-      />
+      <WeatherIcon code={data.weather[0].icon}></WeatherIcon>
       <p>{capitalizeFirstLetter(weatherDescription)}</p>
       <p>{temperature}℃</p>
     </div>

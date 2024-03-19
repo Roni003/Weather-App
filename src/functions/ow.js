@@ -10,7 +10,7 @@ export function setLocationInLocalStorage(location) {
 }
 
 /**
- * 
+ *
  * @param {string} location - location to get weather info about
  * @returns {Promise} - fetch request that returns weather information
  */
@@ -49,9 +49,9 @@ export async function getHourlyWeatherInfo(location) {
 }
 
 /** Since the openWeather API's use longitude and latitude, a secondary API is used to get lon & lat data from a location name
-* @param {string} location - location name to get lon & lat for
-* @returns {Promise} - returns the fetch request, that returns the lon & lat for the loation
-*/
+ * @param {string} location - location name to get lon & lat for
+ * @returns {Promise} - returns the fetch request, that returns the lon & lat for the loation
+ */
 export function getCoordsFromLocation(location) {
   const url = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${OW_API_KEY}`;
 

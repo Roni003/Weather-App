@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "./BoxComponent1.css";
 import { capitalizeFirstLetter } from "../functions/helpers.js";
-import closeBtn from "../assets/closeBtn.png";
+import WeatherIcon from "./weatherIcon.jsx";
 
 const BoxComponent = ({ data, onRemove, onAdd }) => {
   return (
@@ -14,10 +14,7 @@ const BoxComponent = ({ data, onRemove, onAdd }) => {
         <h2 style={{ fontSize: "20px" }}>
           {capitalizeFirstLetter(data.location)}
         </h2>
-        <img
-          src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-          alt={`${data.weather[0].description} icon`}
-        />
+        <WeatherIcon code={data.weather[0].icon}></WeatherIcon>
       </div>
       <div id="bottom" className="subdivision">
         <span style={{ fontSize: "14px" }}>
