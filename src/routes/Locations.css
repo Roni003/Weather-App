@@ -1,14 +1,8 @@
 .Locations {
   display: flex;
   align-items: center;
-  padding-right: 1em;
-  padding-left: 0.5em;
   flex-direction: column;
-  justify-content: flex-start; 
-}
-
-
-
-.Locations div2{
-  align-self: center;
+  justify-content: flex-start;
+  margin: auto;
+  /* height: 100dvh; */
 }

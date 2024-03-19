@@ -1,69 +1,67 @@
 .box-container {
-    background-image: url("../assets/BlurredBG.png");
-    padding: 0;
-    height: 340px;
-    display: grid;
-    grid-template-rows: 10fr 12fr;
-    align-items: center;
+  background-image: url("../assets/BlurredBG.png");
+  padding: 0;
+  height: 340px;
+  display: grid;
+  grid-template-rows: 10fr 12fr;
+  align-items: center;
 }
 
 .box {
-    padding: 20px;
-    margin: 10px auto; 
-    text-align: center;
-    border-radius: 10px;
-    background-image: url("../assets/BlurredBG.png");
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    margin-bottom: 20px; 
-    width: 330px;
-    font-family: 'Arial';
-    font-size: 2px;
-    height: 100px;
-    margin-right: 4800;
+  padding: 20px;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 10px;
+  background-image: url("../assets/BlurredBG.png");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 330px;
+  font-family: "Arial";
+  font-size: 2px;
+  height: 100px;
+  margin-right: 4800;
 }
-
 
 .box h2 {
-    top: 10px; 
-    left: 50%; 
-    transform: translateX(-29%); 
-    font-size: 5px; 
-    margin-bottom: 10px; 
-    margin-left: 50px;
+  font-size: 5px;
+  text-align: center;
 }
 
-
 .subdivision {
-    display: flex; 
-    align-items: center; 
-    margin: 5px 0; 
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  justify-content: space-between;
 }
 
 .subdivision span {
-    font-size: 2px; 
+  font-size: 2px;
 }
 
-
 .box img {
-    width: 25%; 
+  width: 25%;
 }
 
 div#top {
-    margin-top: -20px;
+  margin-top: -20px;
 }
 
-div#bottom{
-    margin-top: +15px;
+div#bottom {
+  margin-top: +15px;
 }
 
-button{
-    transform: translateX(-10px);
-    font-family: ui-rounded;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    font-size: 22px;
-    color: white;
+button {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+}
+
+button img {
+  height: 100%;
+  object-fit: cover;
 }
