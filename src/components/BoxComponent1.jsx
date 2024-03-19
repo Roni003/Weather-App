@@ -3,14 +3,13 @@ import "./BoxComponent1.css";
 import { capitalizeFirstLetter } from "../functions/helpers.js";
 import closeBtn from "../assets/closeBtn.png";
 
-const BoxComponent = ({ data, onRemove }) => {
+const BoxComponent = ({ data, onRemove, onAdd }) => {
   return (
     <div className="box">
       <div id="top" className="subdivision">
         <div>
-          <button onClick={onRemove}>
-            <img src={closeBtn} alt="Close Button"></img>
-          </button>
+          <button onClick={onRemove}>X</button>
+          <button onClick={onAdd}>Add</button>
         </div>
         <h2 style={{ fontSize: "20px" }}>
           {capitalizeFirstLetter(data.location)}
@@ -33,11 +32,8 @@ const BoxComponent = ({ data, onRemove }) => {
 };
 
 BoxComponent.propTypes = {
-  cityName: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-  temperature: PropTypes.number.isRequired,
-  details: PropTypes.string.isRequired,
   onRemove: PropTypes.func.isRequired,
+  onAdd: PropTypes.func.isRequired,
 };
 
 export default BoxComponent;

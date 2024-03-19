@@ -2,7 +2,10 @@ import "./Locations.css";
 import LocationsTopSection from "../components/LocationsTopSection";
 import BoxComponent from "../components/BoxComponent1";
 import SearchBar from "../components/SearchBar";
-import { getLocationFromLocalStorage } from "../functions/ow.js";
+import {
+  getLocationFromLocalStorage,
+  setLocationInLocalStorage,
+} from "../functions/ow.js";
 import { useEffect, useState } from "react";
 
 const OW_API_KEY = "521df71864619eb4967a3609be2c0191";
@@ -15,6 +18,7 @@ const Locations = () => {
   useEffect(() => {
     const storedLocation = getLocationFromLocalStorage();
     const initialLocation = storedLocation || "Mile end";
+    console.log("this is my innital location", initialLocation);
     getWeatherInfo(initialLocation).then((weatherData) => {
       setData([weatherData]);
     });
@@ -44,6 +48,10 @@ const Locations = () => {
     setHourlyData((currentHourlyData) =>
       currentHourlyData.filter((_, i) => i !== index)
     );
+  };
+
+  const addLocation = (index) => {
+    setLocationInLocalStorage(index);
   };
 
   async function getWeatherInfo(location) {
@@ -103,6 +111,7 @@ const Locations = () => {
             key={index}
             data={weatherData}
             onRemove={() => removeLocation(index)}
+            onAdd={() => addLocation(weatherData.location)}
           />
         ))}
       </div>

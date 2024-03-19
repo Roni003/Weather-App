@@ -59,6 +59,8 @@ button {
   margin: 0;
   width: 50px;
   height: 50px;
+  color: white;
+  font-size: large;
 }
 
 button img {
