@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 import "./BoxComponent.css";
 import { capitalizeFirstLetter } from "../functions/helpers.js";
 import WeatherIcon from "./weatherIcon.jsx";
+import trashcan from "../assets/icons/trashcan.png"
 
 const BoxComponent = ({ data, onRemove, handleClick }) => {
-  console.log(data)
   return (
     <div className="box" onClick={handleClick}>
 
       <div id="top" className="subdivision">
-        <button id="remove-button" onClick={onRemove}>X</button>
+        <button id="remove-button" onClick={onRemove}><img src={trashcan} alt="trashcan" /></button>
         <h2>
           {capitalizeFirstLetter(data.location)}
         </h2>
