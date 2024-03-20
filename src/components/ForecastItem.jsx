@@ -7,9 +7,14 @@ const ForecastItem = ({ data }) => {
   const weatherDescription = data.weather[0].description;
   const temperature = data.main.temp;
 
+  //output hourly weather information
   return (
     <div className="forecast-item">
-      <p>{time.substring(0, 2).replace(":", "") + " " + time.substring(time.length - 2, time.length)}</p>
+      <p>
+        {time.substring(0, 2).replace(":", "") +
+          " " +
+          time.substring(time.length - 2, time.length)}
+      </p>
       <WeatherIcon code={data.weather[0].icon}></WeatherIcon>
       <p>{capitalizeFirstLetter(weatherDescription)}</p>
       <p>{temperature}℃</p>

@@ -7,6 +7,7 @@ import lightRain from "../assets/icons/light-rain.png";
 import storm from "../assets/icons/storm.png";
 import snowy from "../assets/icons/snowy.png";
 
+// maps API icon codes to our images
 const weatherIcons = {
   "01d": sunnyDay,
   "02d": fewClouds,

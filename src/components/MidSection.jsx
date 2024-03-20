@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
 import "./MidSection.css";
 import { capitalizeFirstLetter } from "../functions/helpers.js";
 import WeatherIcon from "./weatherIcon.jsx";
 
 const MidSection = ({ data }) => {
+  //output current weather information
   return (
     <div className="mid">
       <h1> {capitalizeFirstLetter(data.location)} </h1>

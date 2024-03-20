@@ -11,6 +11,7 @@ const TopSection = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  //options to go to locations page or sidebar
   return (
     <div className={`top ${isSidebarOpen ? "top-sidebar-open" : ""}`}>
       <div className="menu">
@@ -20,9 +21,12 @@ const TopSection = () => {
         </label>
       </div>
 
+      {/* link to locations page */}
       <div>
         <Link to={"/locations"}>+</Link>
       </div>
+
+      {/* creates a smooth transition upon opening sidebar */}
       <CSSTransition
         in={isSidebarOpen}
         timeout={500}
