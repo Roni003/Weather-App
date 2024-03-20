@@ -1,6 +1,6 @@
 import "./Locations.css";
 import LocationsTopSection from "../components/LocationsTopSection";
-import BoxComponent from "../components/BoxComponent1";
+import BoxComponent from "../components/BoxComponent";
 import SearchBar from "../components/SearchBar";
 import {
   getLocationFromLocalStorage,
@@ -9,6 +9,7 @@ import {
   getHourlyWeatherInfo,
 } from "../functions/ow.js";
 import { useEffect, useState } from "react";
+import { redirect } from "react-router-dom";
 
 const OW_API_KEY = "521df71864619eb4967a3609be2c0191";
 
@@ -20,7 +21,6 @@ const Locations = () => {
   useEffect(() => {
     const storedLocation = getLocationFromLocalStorage();
     const initialLocation = storedLocation || "Mile end";
-    console.log("this is my innital location", initialLocation);
     getWeatherInfo(initialLocation).then((weatherData) => {
       setData([weatherData]);
     });
@@ -52,10 +52,6 @@ const Locations = () => {
     );
   };
 
-  const addLocation = (index) => {
-    setLocationInLocalStorage(index);
-  };
-
   return (
     <>
       <LocationsTopSection />
@@ -67,7 +63,11 @@ const Locations = () => {
             key={index}
             data={weatherData}
             onRemove={() => removeLocation(index)}
-            onAdd={() => addLocation(weatherData.location)}
+            handleClick={() => {
+              setLocationInLocalStorage(weatherData.location)
+              //redirect("/"), does not work for some reason
+              window.location = "/";
+            }}
           />
         ))}
       </div>
