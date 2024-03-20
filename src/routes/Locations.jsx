@@ -6,16 +6,11 @@ import {
   getLocationFromLocalStorage,
   setLocationInLocalStorage,
   getWeatherInfo,
-  getHourlyWeatherInfo,
 } from "../functions/ow.js";
 import { useEffect, useState } from "react";
-import { redirect } from "react-router-dom";
-
-const OW_API_KEY = "521df71864619eb4967a3609be2c0191";
 
 const Locations = () => {
   const [data, setData] = useState([]);
-  const [hourlyData, setHourlyData] = useState();
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -23,9 +18,6 @@ const Locations = () => {
     const initialLocation = storedLocation || "Mile end";
     getWeatherInfo(initialLocation).then((weatherData) => {
       setData([weatherData]);
-    });
-    getHourlyWeatherInfo(initialLocation).then((hourlyWeatherData) => {
-      setHourlyData([hourlyWeatherData.data]);
     });
   }, []);
 
@@ -39,17 +31,10 @@ const Locations = () => {
       setData((prevData) => [...prevData, weatherData]);
       setError("");
     });
-    getHourlyWeatherInfo(location).then((hourlyWeatherData) => {
-      setHourlyData((prevData) => [...prevData, hourlyWeatherData.data]);
-    });
   };
 
   const removeLocation = (index) => {
     setData((currentData) => currentData.filter((_, i) => i !== index));
-
-    setHourlyData((currentHourlyData) =>
-      currentHourlyData.filter((_, i) => i !== index)
-    );
   };
 
   return (
