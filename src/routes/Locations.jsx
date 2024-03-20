@@ -10,10 +10,10 @@ import {
 import { useEffect, useState } from "react";
 
 const Locations = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState("");
+  const [data, setData] = useState([]); // State for weather data of locations
+  const [error, setError] = useState(""); // State for handling errors
 
-  useEffect(() => {
+  useEffect(() => { //Fetch and display initial weather data
     const storedLocation = getLocationFromLocalStorage();
     const initialLocation = storedLocation || "Mile end";
     getWeatherInfo(initialLocation).then((weatherData) => {
@@ -21,7 +21,7 @@ const Locations = () => {
     });
   }, []);
 
-  const handleSearchSubmit = (location) => {
+  const handleSearchSubmit = (location) => {  // Add new location weather data
     if (data.length >= 4) {
       setError("You can only add up to 4 locations.");
       return;
@@ -33,7 +33,7 @@ const Locations = () => {
     });
   };
 
-  const removeLocation = (index) => {
+  const removeLocation = (index) => {  // Remove a location from the list
     setData((currentData) => currentData.filter((_, i) => i !== index));
   };
 

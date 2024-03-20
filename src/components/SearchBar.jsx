@@ -2,9 +2,9 @@ import { useState } from 'react';
 import './SearchBar.css';
 
 const SearchBar = ({ onSearchSubmit }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState(''); // State for the search input
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { // Handles search submission
     e.preventDefault();
     setSearchTerm("");
     onSearchSubmit(searchTerm);
@@ -15,9 +15,9 @@ const SearchBar = ({ onSearchSubmit }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Search for a City or Town"
+          placeholder="Search for a City or Town" // Input field for search term
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => setSearchTerm(e.target.value)} // Updates search term state on change
         />
       </form>
     </div>

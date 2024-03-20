@@ -4,7 +4,7 @@ import { capitalizeFirstLetter } from "../functions/helpers.js";
 import WeatherIcon from "./weatherIcon.jsx";
 import trashcan from "../assets/icons/trashcan.png"
 
-const BoxComponent = ({ data, onRemove, handleClick }) => {
+const BoxComponent = ({ data, onRemove, handleClick }) => {   // Component that displays weather information for a location in a box layout
   return (
     <div className="box" onClick={handleClick}>
 
