@@ -5,11 +5,16 @@ import WeatherIcon from "./weatherIcon.jsx";
 import trashcan from "../assets/icons/trashcan.png"
 
 const BoxComponent = ({ data, onRemove, handleClick }) => {   // Component that displays weather information for a location in a box layout
+  function handleRemove(e) {
+    e.stopPropagation();
+    onRemove();
+  }
+
   return (
     <div className="box" onClick={handleClick}>
 
       <div id="top" className="subdivision">
-        <button id="remove-button" onClick={onRemove}><img src={trashcan} alt="trashcan" /></button>
+        <button id="remove-button" onClick={handleRemove}><img src={trashcan} alt="trashcan" /></button>
         <h2>
           {capitalizeFirstLetter(data.location)}
         </h2>
