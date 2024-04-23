@@ -1,4 +1,5 @@
-const OW_API_KEY = "521df71864619eb4967a3609be2c0191";
+const OW_API_KEY = "521df71864619eb4967a3609be2c0191"; //Invalid key, used client-side for prototyping 
+
 // Returns the value of location from localstorage
 export function getLocationFromLocalStorage() {
   return localStorage.getItem("location");
