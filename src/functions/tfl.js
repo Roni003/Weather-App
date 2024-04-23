@@ -1,5 +1,5 @@
-const TFL_API_ID = "8a625acf19ac4447a1990cfbac214163";
-const TFL_API_KEY = "fe4079da085740529d42ffe9e57db3c9";
+const TFL_API_ID = "8a625acf19ac4447a1990cfbac214163"; //Invalid key, used client-side for prototyping 
+const TFL_API_KEY = "fe4079da085740529d42ffe9e57db3c9"; //Invalid key, used client-side for prototyping 
 
 // Takes an array of TFL line names, updates the value of "lines" with them in localstorage
 export function setLocalStorageLines(linesArray) {
