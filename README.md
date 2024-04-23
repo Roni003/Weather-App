@@ -1,6 +1,7 @@
-## Weather App
+## Weather App <br> <br>For University Students in London
 
-### For University Students
+### Home Screen:
+<img src="https://github.com/Roni003/GUI-Weather-App/assets/61784529/f8d80835-b863-4894-8f88-2ce1947ae5d7" alt="drawing" width="200"/>
 
 ## Requirements
 
